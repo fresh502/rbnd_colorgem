@@ -1,0 +1,13 @@
+• How does your gem take advantage of Ruby’s metaprogramming capabilities?
+	I can generate similar methods using class_eval and class variable.
+	Class variable 'colors_n_code' is hash which contains colors as key and codes as value.
+	I make instance methods using metaprogramming capabilities iterating through the hash.
+
+• How long did you spend working on this project?
+	I almost spent 4 hours working on this project.
+
+• What was the most rewarding challenge you conquered?
+	I had trouble escaping string interpolation inside class_eval method block.
+
+• Where do you still have room to grow?
+	I want to make complicated instance method using metaprogramming capabilities.
