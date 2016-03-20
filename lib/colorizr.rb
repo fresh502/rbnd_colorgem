@@ -11,11 +11,20 @@ class String
 		@@colors_n_code.keys
 	end
 	def self.sample_colors
-		# @@colors_n_code.each do |color, code|
-		# 	puts "This is \e[#{code}m#{color}\e[0m"
-		# end
 		@@colors_n_code.keys.each do |color|
 			puts "This is #{color.to_s}".send(color)
 		end
 	end
+	def method_missing(color)
+		if @@colors_n_code.keys.include? color
+			#string_for_method = %Q{def #{color.to_s}() "\e[#{@@colors_n_code[:color]}m\#{self}\e[0m" end}
+			#String.class_eval(string_for_method)
+			String.create_colors
+			send(color)
+		else
+			super
+		end
+	end
 end
+
+String.sample_colors
